@@ -1,0 +1,52 @@
+.inputField {
+  border-radius: 25px;
+  background: transparent;
+
+  & .MuiOutlinedInput-notchedOutline {
+    border-radius: 25px;
+    border: solid 2px gray;
+    background: transparent;
+    top: 0px;
+  }
+
+  &.error {
+    & .MuiOutlinedInput-notchedOutline {
+      border-color: red; // Red border for error state
+    }
+
+    & input {
+      color: red; // Red input text for error state
+    }
+  }
+
+  & input {
+    line-height: normal;
+    background: transparent;
+  }
+}
+
+.form-control-register {
+  .MuiInputBase-input-MuiOutlinedInput-input{
+      padding: 15px 14px 16px 14px;
+  }
+  .MuiInputLabel-root {
+    color: gray;
+  }
+
+  .Mui-focused {
+    color: gray !important;
+  }
+
+  &.error {
+    .MuiInputLabel-root {
+      color: red !important; // Red label for error state
+    }
+  }
+}
+
+.helper-text {
+  color: gray;
+  &.error {
+    color: red; // Red helper text for error state
+  }
+}

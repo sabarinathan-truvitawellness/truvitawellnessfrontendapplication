@@ -1,0 +1,171 @@
+.view-prescription-container {
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.view-prescription-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+}
+
+.download-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+
+  .download-btn {
+    width: auto;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+.prescription-overview-container {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 65vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  .prescription-overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .doctor-personal-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        max-width: 50px;
+        height: auto;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: 14px;
+          color: #333;
+        }
+      }
+    }
+
+    .truvita-logo img {
+      max-width: 120px;
+      height: auto;
+    }
+  }
+
+  .prescription-patient-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: 14px;
+        color: #555;
+      }
+    }
+  }
+
+  .horizontal-line {
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+  }
+
+  .diagnosis-summery,
+  .description-summery,
+  .drug-allergies,
+  .medicine-follow-up {
+    margin-bottom: 20px;
+
+    h5 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+  }
+
+  .medication-list {
+    margin-bottom: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .doctors-advice {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    ol {
+      padding-left: 20px;
+      list-style-type: decimal;
+      li {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .docotr-signature {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

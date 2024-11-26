@@ -1,0 +1,17 @@
+// PageRender styles
+.page-render-container {
+  .container-wrapper {
+    display: flex;
+    width: auto;
+
+    .pr-col-1 {
+      // position: relative;
+    }
+
+    .pr-col-2 {
+     flex: 1;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+  }
+}

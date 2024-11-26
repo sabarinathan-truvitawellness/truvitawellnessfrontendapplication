@@ -1,0 +1,11 @@
+.doctor-details-container {
+    .doctor-details-wrapper {
+        display: flex;
+        width: 100%; // Ensure the wrapper takes full width
+        .about-dr-section {
+           
+            min-width: 0; // Ensures the section can shrink if needed
+        }
+
+    }
+}

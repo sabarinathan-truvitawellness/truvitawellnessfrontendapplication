@@ -1,0 +1,22 @@
+.date-picker {
+    width: 100%; 
+    border-radius: 48px;
+
+    & .MuiOutlinedInput-notchedOutline {
+        border-radius: 48px; 
+    }
+
+    & .MuiInputAdornment-root {
+        margin-right: 8px; 
+    }
+
+    .helper-text {
+        color: red;
+        font-size: 0.875rem;
+    }
+}
+
+.MuiInputBase-root{
+    border-radius: 48px;
+}
+

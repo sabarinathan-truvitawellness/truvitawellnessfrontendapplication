@@ -1,0 +1,41 @@
+// src/styles/main.scss
+@import './_variables';
+
+body {
+
+}
+
+h1 {
+ 
+}
+
+
+.button {
+ 
+}
+
+.container{
+    width: 100%;
+     margin: 0 auto
+}
+
+
+//this for global input field wrapper
+.global-input-wrapper{
+    width: 100%;
+}
+//this for global button wrapper
+.global-button-wrapper{
+    width: 100%;
+}
+
+.secondary-anchor-btn{
+    background-color: #3375D826 ;
+    border-radius: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-text{
+    color:#3375D8;
+}

@@ -1,0 +1,142 @@
+@import '../../Style/mixins';
+
+.header-container {
+  width: 100%;
+  padding: 20px;
+
+  .header-container-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .column-1 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border-radius: 24px;
+    background: #017A99;
+    padding: 20px;
+
+    .name-details {
+      align-items: center;
+
+      h2 {
+        font-size: 20px;
+        margin-right: 5px;
+      }
+
+      p {
+        font-size: 14px;
+        color: white;
+      }
+    }
+
+    .calender-details {
+      font-size: 14px;
+      color: white;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .column-2 {
+    display: flex;
+    align-items: center;
+    background: #00a8cc;
+    border-radius: 24px;
+    padding: 20px;
+    color: #ffffff;
+
+    .icon-wrp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: #00a8cc;
+      }
+    }
+
+    .waller-content-wrp {
+      h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .column-3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .input-wrp {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: #f0f2f5;
+      border-radius: 20px;
+      padding: 5px 15px;
+
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #333333;
+
+        &::placeholder {
+          color: #999999;
+        }
+      }
+
+      svg {
+        position: absolute;
+        right: 10px;
+        fill: #999999;
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .notification-icon-wrp,
+    .logout-icon-wrp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+      svg {
+        width: 18px;
+        height: 18px;
+        fill: #017589;
+      }
+    }
+   
+    .profile-avatar-wrp{
+      cursor: pointer;
+    }
+  }
+}

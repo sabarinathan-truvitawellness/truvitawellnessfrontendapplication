@@ -1,0 +1,97 @@
+.prescription-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+  
+    .prescription-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 25px;
+      padding: 20px;
+      gap: 15px;
+  
+      .doctor-image {
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+  
+      .doctor-name
+      {
+        flex: 1;
+        p {
+          color: #232C2B;
+          font-family: Manrope;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+      .medication-type{
+        flex: 1;
+        p {
+          color: #0FC0ED;
+          font-family: Manrope;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+      .medication-date {
+        flex: 1;
+        p {
+            color: #232C2B;
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+  
+        
+      }
+  
+
+      .download-icon{
+        border: 1px solid rgb(187, 187, 187);
+        padding: 12px;
+        border-radius: 50%;
+        svg {
+            width: 30px;
+            height: 30px;
+            fill: #007bff;
+          }
+      }
+    
+
+    }
+
+    .right-arrow {
+        border: 1px solid rgb(187, 187, 187);
+        padding: 12px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+  
+        svg {
+          width: 20px;
+          height: 20px;
+          fill: #007bff;
+  
+          &:hover {
+            fill: #0056b3;
+          }
+        }
+      }
+  }
+  

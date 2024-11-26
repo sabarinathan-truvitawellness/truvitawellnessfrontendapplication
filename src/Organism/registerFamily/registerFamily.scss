@@ -1,0 +1,41 @@
+.register-family-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  .register-family-wrapper {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 25px;
+    // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h2 {
+      text-align: center;
+      color: #0fc0ed;
+      font-family: Manrope;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    button.submit-button {
+      background: #0fc0ed;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 24px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+/* below code was used for global tailwind styling */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// This will importing the global styling
+@import './Style/main.scss';
+
+//font fmaily from google font
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F5F8F8;
+}
+
+code {
+  font-family: 'source-code-pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+

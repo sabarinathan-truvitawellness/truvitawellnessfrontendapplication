@@ -1,0 +1,159 @@
+.appointment-list-container {
+//   border: 1px solid #ddd;
+  border-radius: 25px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFF;
+
+
+  .apointment-warpper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .list-col-1,
+    .list-col-2,
+    .list-col-3,
+    .list-col-4,
+    .list-col-5,
+    .list-col-6 {
+      display: flex;
+      align-items: center;
+    }
+
+    .list-col-1 {
+      color: #0fc0ed;
+      font-family: Manrope;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      border-radius: 16px;
+      background: rgba(15, 192, 237, 0.08);
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      p {
+        margin-top: 10px;
+      }
+      .col-1-icon-wrapper{
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .list-col-2 {
+      display: flex;
+
+      .col-2-wrapper {
+        display: flex;
+        align-items: center;
+
+        img {
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          margin-right: 20px;
+        }
+
+
+        .cp-1 {
+          color: rgba(35, 44, 43, 0.5);
+          font-family: Manrope;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          margin: 8px 0;
+        }
+
+        .cp-2 {
+          display: flex;
+          color: rgba(35, 44, 43, 0.5);
+          font-family: Manrope;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        h2 {
+          color: #232c2b;
+          font-family: Manrope;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+    }
+
+    .list-col-3 {
+        p{
+            color: #0FC0ED;
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-left: 8px;
+        }
+    }
+
+    .list-col-4 {
+      .col-4-wrapper {
+      }
+      .ap-1 {
+        color: #232c2b;
+        font-family: Manrope;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .ap-2 {
+        color: rgba(35, 44, 43, 0.50);
+        font-family: Manrope;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-align: center;
+      }
+    }
+
+    .list-col-5 {
+      display: flex;
+
+      .icon-wrapper {
+        padding: 12px;
+        border: 1px solid rgb(165, 165, 165);
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .list-col-6 {
+        
+      .appointmen-view {
+        background-color: #0FC0ED;
+        padding: 15px;
+        color: #F5F8F8;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        border-radius: 25px;
+      }
+    }
+  }
+}

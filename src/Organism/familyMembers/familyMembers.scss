@@ -1,0 +1,113 @@
+.family-member-selector {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f9fc;
+  
+    .back-link {
+      display: block;
+      margin-bottom: 20px;
+      color: #00aaff;
+      text-decoration: none;
+    }
+  
+    h2 {
+        color: #232C2B;
+        font-family: Manrope;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
+  
+    .members-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+  
+      .member-card {
+        cursor: pointer;
+        // border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid transparent;
+        transition: border 0.3s;
+  
+        &.selected {
+          border: 2px solid #00aaff;
+        }
+  
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+  
+        p {
+          margin-top: 8px;
+          font-size: 0.9rem;
+        }
+      }
+  
+      .add-member-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+  
+    .confirm-button {
+      background-color: #00aaff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+  
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+  
+      .add-member-button,
+      .remove-member-button {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+  
+      .add-member-button {
+        color: white;
+        color: #0FC0ED;
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+border: 1px solid rgb(173, 170, 170);
+      }
+  
+      .remove-member-button {
+        color: white;
+        color: #E33629;
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+border: 1px solid rgb(173, 170, 170);
+      }
+    }
+  }
+  

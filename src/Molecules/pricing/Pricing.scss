@@ -1,0 +1,50 @@
+@import '../../Style/mixins';
+
+.pricing-container-wrapper {
+
+  .pricing-title {
+    color: #0DB1DB;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .pricing-plan-card {
+
+    @include respond-to('mobile') {
+      display: block;
+      padding-top: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+  }
+
+  .plan-card {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    ul {
+      li {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+
+    button {
+      &:hover {
+        background-color: #008fbf;
+      }
+    }
+  }
+
+  .premium {
+    background-color: #003c65;
+    color: #fff;
+  }
+}

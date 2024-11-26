@@ -1,0 +1,49 @@
+.select-container {
+    margin: 1rem 0;
+    
+    .MuiFormControl-root {
+      width: 100%;
+    }
+  
+    .MuiInputLabel-root {
+      font-size: 1rem;
+      color: #333;
+      &.Mui-focused {
+        color: #007bff;
+      }
+    }
+  
+    .MuiOutlinedInput-root {
+      fieldset {
+        // border-color: #ccc;
+        border-radius: 48px; // Add border-radius here
+      }
+      &:hover fieldset {
+        border-color: #007bff;
+      }
+      &.Mui-focused fieldset {
+        border-color: #007bff;
+      }
+    }
+  
+    .MuiNativeSelect-root {
+      font-size: 1rem;
+      border-radius: 48px; // Add border-radius for the native select
+    }
+  
+    option {
+      background-color: #fff;
+      color: #333;
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+
+    .helper-text {
+        color: red;
+        font-size: 0.875rem;
+    }
+  }
+  
+
+ 

@@ -1,0 +1,108 @@
+.pill-remainder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  
+    .pill-remainder-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 24px;
+      padding: 20px;
+      gap: 15px;
+  
+      .pill-icon {
+        svg {
+          width: 40px;
+          height: 40px;
+          fill: #007bff;
+        }
+      }
+  
+      .medicine-name h2 {
+        color: #232C2B;
+        font-family: Manrope;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+  
+      .doctor-name p{
+        color: rgba(35, 44, 43, 0.50);
+        font-family: Manrope;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    //   .doctor-name p,
+      .intake-info
+      {
+        text-align: center;
+        p{
+     
+            color: rgba(35, 44, 43, 0.50);
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+      }
+    
+      .intimate-timing p,
+      .upcoming-timing p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+      }
+  
+      .intake-info,
+      .intimate-timing {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .upcoming-timing p {
+        font-weight: bold;
+        color: #0FC0ED;
+      }
+  
+      .action-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        .cancel-btn{
+            padding: 12px;
+            border: 1px solid rgb(189, 187, 187);
+            border-radius: 50%;
+            background-color: red;
+        }
+        .taken-btn{
+            padding: 12px;
+            border: 1px solid rgb(189, 187, 187);
+            border-radius: 50%;
+            background-color:  #0FC0ED;
+        }
+        .taken-btn svg {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+  
+        .cancel-btn svg {
+          fill: #ff4d4d;
+  
+          &:hover {
+            fill: #cc0000;
+          }
+        }
+      }
+    }
+  }
+  

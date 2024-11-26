@@ -1,0 +1,96 @@
+.about-doctor-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .about-doctor-wrapper {
+    display: flex;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-col-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  img {
+    height: max-content;
+   }
+  
+ 
+  
+  .doctor-fees-section {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+  
+  .doctor-detail-wrapper p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .doctor-detail-wrapper span {
+    font-size: 16px;
+    color: #666;
+    margin-left: 5px;
+  }
+  
+  .rating-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+    p{
+        display: flex;
+        align-items: center;
+    }
+    span{
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+
+        color: rgba(35, 44, 43, 0.50);
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    }
+  }
+  
+  .rating-starts-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background: #0FC0ED;
+    padding: 5px 8px;
+    color: white;
+    border-radius:25px ;
+  
+  }
+  
+  .about-doc-content p {
+    margin-top: 10px;
+    color: #232C2B;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  p span {
+    margin-left: 5px;
+    
+  }
+  
+  .horizontal-line{
+    border-bottom: 2px solid rgb(185, 185, 185);
+    margin: 20px 0;
+  }

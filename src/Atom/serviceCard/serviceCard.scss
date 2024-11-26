@@ -1,0 +1,23 @@
+.service-card-container {
+  background-color: rgba(15, 192, 237, 0.12);
+  padding: 20px;
+  border-radius: 25px;
+  .template-wrapper {
+    .row-1 {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .row-2 {
+      p {
+        width: 75%;
+        color: #017a99;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+  }
+}

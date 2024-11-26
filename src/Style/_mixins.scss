@@ -1,0 +1,31 @@
+//global media query mixins
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==small {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==medium {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==large {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==xlarge {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Unknown breakpoint: #{$breakpoint}.";
+    }
+}

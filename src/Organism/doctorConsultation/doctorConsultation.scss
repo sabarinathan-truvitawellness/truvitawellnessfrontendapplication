@@ -1,0 +1,55 @@
+.doctor-consulation-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+  
+  .doctor-consultation-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .global-input-wrapper {
+    flex: 1;
+    min-width: 250px;
+  
+    .internal-input-firstname,
+    .internal-input-dob {
+      width: 100%;
+      label {
+        font-weight: 600;
+        margin-bottom: 5px;
+        display: block;
+      }
+    }
+  }
+  
+  .filter-btn {
+    align-self: flex-start;
+    padding: 20px 50px;
+    color: #fff;
+    border: none;
+    border-radius: 48px;
+background: #0FC0ED;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  
+  .doctor-consultation-wrapper > div:last-child {
+    margin-top: 20px;
+  }
+  

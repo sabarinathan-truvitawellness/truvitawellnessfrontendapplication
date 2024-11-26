@@ -1,0 +1,46 @@
+.calendar-container {
+    .week-navigation {
+      display: flex;
+     gap: 40px;
+      margin-bottom: 10px;
+    }
+  
+    .date-selector {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+  
+    .date-item {
+      padding: 10px;
+      border-radius: 16px;
+      border: 1px solid gray;
+      
+      cursor: pointer;
+      &.unavailable {
+        background-color: #e6e4e4;
+        cursor: not-allowed;
+      }
+      &.selected {
+        background: rgba(15, 192, 237, 0.75);
+        border: 2px solid #0DB1DB;
+        color: #fff;
+      }
+    }
+  
+    .slots-container {
+      .slot-item {
+        margin: 5px;
+        padding: 8px 12px;
+        // border: 1px solid #007bff;
+        border-radius: 25px;
+        background-color: #4df7c1;
+        cursor: pointer;
+        &.unavailable-slot {
+          background-color: #d3d3d3;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  

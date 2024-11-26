@@ -1,0 +1,125 @@
+@import "../../Style/mixins";
+
+.plan-card {
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto; // Ensures consistent card height
+  margin-bottom: 20px;
+
+  @include respond-to("mobile") {
+    // Additional mobile-specific styles can be added here
+  }
+
+  // Premium plan styling
+  &.premium {
+    background: linear-gradient(270deg, #0fc0ed 0%, #017a99 100%);
+    color: #fff;
+
+    li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-family: Manrope;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    h3, p, p span {
+      color: #fff;
+      font-family: Manrope;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p, p span {
+      font-size: 24px;
+      border-radius: 16px;
+      padding: 5px;
+background: #017B9A;
+    }
+  }
+
+  // Title section within the card
+  .plan-card-title-section {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to("mobile") {
+      display: block;
+    }
+
+    h3 {
+      font-family: Manrope;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    p {
+      font-family: Manrope;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    p span {
+      font-family: Manrope;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .offer-price {
+      text-decoration: line-through;
+      color: rgb(221, 219, 219);
+      font-size: 20px;
+    }
+  }
+
+  // List styles within the card
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: rgba(35, 44, 43, 0.9);
+    font-family: Manrope;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+
+    span {
+      color: #00c0ff;
+      margin-right: 10px;
+    }
+  }
+
+  // Button styling
+  button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #00c0ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: auto; // Ensures button is at the bottom
+  }
+}
