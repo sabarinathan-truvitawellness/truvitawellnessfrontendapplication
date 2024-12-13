@@ -8,3 +8,4 @@ export * from './settingsChildrenPages';
 export * from './pricing';
 export * from './appointmentServices';
 export * from './aboutDoctor';
+export * from './editPersonalData';

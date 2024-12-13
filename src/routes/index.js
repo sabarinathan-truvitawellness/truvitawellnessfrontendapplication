@@ -22,5 +22,6 @@ export const AppRoutes = {
     pillRemainder:'/pillRemainder',
     aiDocotor: '/aiDocotor',
     aiBooth:'/aiBooth',
-    prescriptionOverView: '/prescriptionOverView'
+    prescriptionOverView: '/prescriptionOverView',
+    wellnessPrograme: '/wellnessPrograme'
 };

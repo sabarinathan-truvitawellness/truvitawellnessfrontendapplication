@@ -9,8 +9,10 @@
     background: transparent;
 
     & .MuiOutlinedInput-notchedOutline {
-        border: solid 2px $input-border; // Match your design
-        border-radius: 25px; 
+        border-radius: 25px;
+        border: solid 2px gray;
+        background: transparent;
+        bottom: 1px;
     }
 
     & input {
@@ -21,6 +23,10 @@
     .helper-text {
         color: red;
         font-size: 0.875rem;
+    }
+
+    :disabled {
+        cursor: not-allowed;
     }
 }
 

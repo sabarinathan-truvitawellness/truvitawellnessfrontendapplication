@@ -15,7 +15,8 @@ import {
   Settings,
   TicketChat,
   AiBooth,
-  PreacriptionOverView
+  PreacriptionOverView,
+  WellnessProgram
 } from "../Organism";
 import { Inbox } from "../Organism/inbox";
 
@@ -83,5 +84,9 @@ export const PrivatePages = [
   {
     path:AppRoutes.prescriptionOverView,
     element: <PreacriptionOverView/>
+  },
+  {
+    path: AppRoutes.wellnessPrograme,
+    element: <WellnessProgram/> 
   }
 ];

@@ -28,8 +28,9 @@ const REGEX_CONSTANT: { [key: string]: RegExp } = {
 };
 
  let LocalStorageKeys = {
-  authToken:"authToken",
-  version:"version"
+  authToken: "authToken",
+  refreshToken: "refreshToken", // Add this key
+  version: "version",
 };
 
 const Gender_Data=  [
@@ -47,6 +48,42 @@ const Gender_Data=  [
 }
 
 ]
+
+const Blood_Group_Data = [
+  {
+    label: "A+",
+    value: "A+"
+  },
+  {
+    label: "A-",
+    value: "A-"
+  },
+  {
+    label: "B+",
+    value: "B+"
+  },
+  {
+    label: "B-",
+    value: "B-"
+  },
+  {
+    label: "O+",
+    value: "O+"
+  },
+  {
+    label: "O-",
+    value: "O-"
+  },
+  {
+    label: "AB+",
+    value: "AB+"
+  },
+  {
+    label: "AB-",
+    value: "AB-"
+  }
+];
+
 
 
 const AllSideNavBars = [
@@ -115,5 +152,6 @@ export {
   REGEX_CONSTANT,
   AllSideNavBars,
   LocalStorageKeys,
-  Gender_Data
+  Gender_Data,
+  Blood_Group_Data
 }

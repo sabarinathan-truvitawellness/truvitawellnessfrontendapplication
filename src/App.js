@@ -7,11 +7,13 @@ import { PublicPage } from "./routes/publicPages";
 import { PrivatePages } from "./routes/privatePage";
 import { AppRedux } from "./redux";
 import { RequireAuth } from "./auth";
+import { AppAuth } from "./App.auth";
 
 function App() {
   return (
   
     < AppRedux>
+    <AppAuth>
    <Routes>
   {/* Public routes without AppNavBars */}
   <Route element={<PublicPage><Outlet /></PublicPage>}>
@@ -29,8 +31,9 @@ function App() {
     ))}
   </Route>
 </Routes>
-
+</AppAuth>
     </AppRedux>
+   
   );
 }
 

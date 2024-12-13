@@ -7,18 +7,21 @@ const getCookie = (name) => {
   return Cookies.get(name) || "";
 };
 
+
+
 export const OtpVerify = createApi({
   reducerPath: "OtpVerify",
   baseQuery: fetchBaseQuery({
     baseUrl: config.baseUrl.BaseUrl,
-    credentials: "include", // Ensure cookies are included in all requests
+    credentials: "include", 
     prepareHeaders: (headers) => {
+     
       // Set the CSRF token for each request
       const csrfToken = getCookie("csrftoken"); // Replace 'csrftoken' with the actual name of your CSRF cookie
       if (csrfToken) {
         headers.set("X-CSRFToken", csrfToken);
       }
-      headers.set("Content-Type", "application/json");
+      headers.set("Content-Type", "application/json");  
       return headers;
     },
   }),

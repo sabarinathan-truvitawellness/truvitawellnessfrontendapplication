@@ -12,6 +12,13 @@
         color: #007bff;
       }
     }
+
+   .MuiOutlinedInput-notchedOutline {
+      border-radius: 25px;
+      border: solid 2px gray;
+      background: transparent;
+      bottom: 1px;
+    }
   
     .MuiOutlinedInput-root {
       fieldset {

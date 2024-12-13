@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { config } from '../../../config';
-import { setAuth } from '../../slices/auth';
+import { setAuth, setUserData } from '../../slices/auth';
+import { LocalStorageKeys } from '../../../utils/common/constant';
 
   
 
@@ -24,7 +25,7 @@ export const AuthAPI = createApi({
         async onQueryStarted(arg, { dispatch, queryFulfilled }) {
           try {
             const { data } = await queryFulfilled;
-      
+  
             // Extract relevant data from the response
             const { access, refresh, roles, user_id, redirect_url } = data ?? {};
       
@@ -32,19 +33,27 @@ export const AuthAPI = createApi({
               // Store tokens in localStorage
               localStorage.setItem('authToken', access);
               localStorage.setItem('refreshToken', refresh);
-      
-              // Optionally store other data if needed
-              localStorage.setItem('roles', JSON.stringify(roles));
-              localStorage.setItem('userId', user_id);
-              localStorage.setItem('redirectUrl', redirect_url);
+              localStorage.setItem('userId',user_id)
+              localStorage.setItem('role',roles)
             }
       
             // Dispatch to store user data or roles in the Redux store if necessary
             dispatch(setAuth({ user: { roles, user_id } }));
+            // dispatch(setUserData({ userData: data.userData }));
           } catch (error) {
             console.log("Error at login auth API: ", error);
           }
         }
+      }),
+      
+      //refresh API
+      refresh: builder.mutation({
+        query: () => ({
+          url: "auth/api/verify-access-token/",
+          method: "POST",
+          body: { token: localStorage.getItem(LocalStorageKeys.authToken) },
+        }),
+       
       }),
       
 
@@ -91,6 +100,7 @@ export const AuthAPI = createApi({
 
 export const { 
     useLoginMutation,
+    useRefreshMutation,
     useResetPasswordMutation,
     useNewPasswordMutation,
     useSignUpMutation 

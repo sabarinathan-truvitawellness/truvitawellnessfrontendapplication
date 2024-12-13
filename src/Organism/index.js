@@ -17,4 +17,5 @@
     export * from './pillRemainder';
     export * from './aiDoctor';
     export * from './aiBooth';
-    export * from './prescriptionOverView'
+    export * from './prescriptionOverView';
+    export * from './wellnessPrograme';

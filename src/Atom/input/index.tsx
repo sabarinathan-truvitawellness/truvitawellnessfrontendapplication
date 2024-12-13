@@ -23,6 +23,7 @@ interface InputProps {
   externalClassName?: string;
   error?: boolean;
   value?: string;
+  disabled?:boolean;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -38,7 +39,8 @@ export const Input: React.FC<InputProps> = ({
   variant = "outlined",
   externalClassName = "",
   error = false,
-  value = ""
+  value = "",
+  disabled = false
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -64,8 +66,9 @@ export const Input: React.FC<InputProps> = ({
         onBlur={onBlur}
         onFocus={onFocus}
         name={name}
-        className={`inputField ${externalClassName} ${error ? "error" : ""}`}
+        className={`inputField ${externalClassName} ${error ? "error" : ""} ${disabled === true ? "disabled" : ""}` }
         value={value}
+        disabled={disabled}
         endAdornment={
           type === "password" && (
             <InputAdornment position="end">

@@ -4,8 +4,13 @@ import PricingPlans from "../../pricing";
 import './billing.scss'
 import { CardPayment, MoneyPayment, OfferPayment, RightArrow, TransactionHistory } from "../../../utils/common/svgIcons";
 import { AppRoutes } from "../../../routes";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux";
 
 export const BillingPayments = (()=>{
+
+    const { user, userData } = useSelector((state: RootState) => state.auth);
+    console.log(userData)
 
     const cardData = [
         {
@@ -39,7 +44,7 @@ export const BillingPayments = (()=>{
                 <div className="billing-col-1">
                   <div className="subscribe-card">
                       <div className="top-data">
-                         <p>Steven Gerald</p>
+                         <p>{`${userData.first_name} ${userData.last_name}`}</p>
                          <p>10/12</p>
                       </div>
                       <div className="bottom-data">

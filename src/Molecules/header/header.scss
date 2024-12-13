@@ -119,6 +119,7 @@
 
     .notification-icon-wrp,
     .logout-icon-wrp {
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -137,6 +138,12 @@
    
     .profile-avatar-wrp{
       cursor: pointer;
+      object-fit: cover;
+      width: 55px;
+      height: 55px;
+      img{
+        border-radius: 50%;
+      }
     }
   }
 }

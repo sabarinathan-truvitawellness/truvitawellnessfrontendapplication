@@ -6,8 +6,20 @@
     border-radius: 25px;
     border: solid 2px gray;
     background: transparent;
-    top: 0px;
+    bottom: 1px;
   }
+
+  input{
+    padding:16px 14px;
+  }
+
+  .disabled{
+    cursor: not-allowed;
+  }
+
+  :disabled {
+    cursor: not-allowed;
+}
 
   &.error {
     & .MuiOutlinedInput-notchedOutline {
@@ -20,15 +32,12 @@
   }
 
   & input {
-    line-height: normal;
     background: transparent;
   }
 }
 
 .form-control-register {
-  .MuiInputBase-input-MuiOutlinedInput-input{
-      padding: 15px 14px 16px 14px;
-  }
+
   .MuiInputLabel-root {
     color: gray;
   }

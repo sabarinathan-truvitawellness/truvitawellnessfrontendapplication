@@ -75,74 +75,80 @@
       }
     }
   
-    .info-section {
-      margin-top: 20px;
-      padding: 16px;
+    .info-section-container{
       background-color: #f9f9f9;
-      border-radius: 25px;
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  
-      .sub-title-section {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 12px;
-  
-        h2 {
-          margin: 0;
-          font-size: 16px;
-          font-weight: bold;
-        }
-  
-        .edit-info-btn {
+      border-radius: 25px;
+      padding: 16px;
+      .info-section {
+        // margin-top: 20px;
+        // 
+       
+        
+    
+        .sub-title-section {
           display: flex;
+          justify-content: space-between;
           align-items: center;
-          font-size: 14px;
-          color: #0fc0ed;
-          cursor: pointer;
-          svg {
-            margin-left: 4px;
-            width: 14px;
-            height: 14px;
-            fill: #0fc0ed;
+          margin-bottom: 12px;
+    
+          h2 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
           }
-  
-          &:hover {
-            color: #0a99ba;
-  
+    
+          .edit-info-btn {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #0fc0ed;
+            cursor: pointer;
             svg {
-              fill: #0a99ba;
+              margin-left: 4px;
+              width: 14px;
+              height: 14px;
+              fill: #0fc0ed;
+            }
+    
+            &:hover {
+              color: #0a99ba;
+    
+              svg {
+                fill: #0a99ba;
+              }
             }
           }
         }
-      }
-  
-      .info-wrapper {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 12px;
-  
-        .info-content {
-          flex: 1;
-          margin-right: 16px;
-  
-          h3 {
-            margin: 0;
-            font-size: 14px;
-            font-weight: bold;
+    
+        .info-wrapper {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 12px;
+    
+          .info-content {
+            flex: 1;
+            margin-right: 16px;
+    
+            h3 {
+              margin: 0;
+              font-size: 14px;
+              font-weight: bold;
+            }
+    
+            p {
+              margin: 4px 0 0;
+              font-size: 12px;
+              color: #6d6d6d;
+            }
           }
-  
-          p {
-            margin: 4px 0 0;
-            font-size: 12px;
-            color: #6d6d6d;
+    
+          &:last-child {
+            margin-right: 0;
           }
-        }
-  
-        &:last-child {
-          margin-right: 0;
         }
       }
     }
+   
   }
   

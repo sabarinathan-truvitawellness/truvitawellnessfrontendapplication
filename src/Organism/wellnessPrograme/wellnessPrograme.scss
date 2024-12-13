@@ -1,0 +1,103 @@
+/* Container */
+.wellness-program-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f7fafc;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  /* Content Section */
+  .content-section {
+    flex: 1;
+    padding-right: 2rem;
+  
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0097d0;
+    }
+  
+    .description {
+      font-size: 1rem;
+      margin: 1rem 0;
+      color: #333;
+    }
+  
+    .features-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0;
+  
+      li {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: #555;
+  
+        &:before {
+          content: "•";
+          color: #0097d0;
+          font-weight: bold;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  
+    .join-button {
+      background-color: #0097d0;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #007aad;
+      }
+    }
+  }
+  
+  /* Image Section */
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .image-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: center;
+  
+      .image {
+        width: 150px;
+        height: 200px;
+        border-radius: 16px;
+        background-color: #e0e0e0;
+  
+        &.yoga {
+          background-image: url("https://via.placeholder.com/150x200.png?text=Yoga+Pose");
+          background-size: cover;
+          background-position: center;
+        }
+  
+        &.runner {
+          background-image: url("https://via.placeholder.com/150x200.png?text=Runner");
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+  }
+  

@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './header.scss';
 import { WalletIcon, Notification, Logout } from "../../utils/common/svgIcons"; 
 import profileAvatar from '../../Assets/images/header/profile-image-avatar.png';
 import { DynamicOverlay } from "../../Atom/overlay";
 import { ProfileOverlay } from "../profileOverlay";
 import { NotificationOverlay } from "../notificationOverlay";
+import { useProfileDataQuery } from "../../redux/services";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth, setUserData } from "../../redux/slices/auth";
+import { RootState } from "../../redux";
+import { Modal, notification } from "antd";
+import { LocalStorageKeys } from "../../utils/common/constant";
 
 export const Header = () => {
     const [isProfileOverlayOpen, setIsProfileOverlayOpen] = useState(false);
     const [isNotificationOverlayOpen, setIsNotificationOverlayOpen] = useState(false);
+    const [isLogoutModalVisible, setIsLogoutModalVisible] = useState(false);
+    const dispatch = useDispatch();
+
+    const userId =  localStorage.getItem("userId")
+    //getting the data from, rtk query
+    const { data } = useProfileDataQuery({ userId: userId });
+    const role = localStorage.getItem("role")
+
+    useEffect(() => {
+        if (data) {
+            console.log("Profile Data:", data);
+            dispatch(setUserData({ userData: data }));
+        }
+    }, [data]);
+
+    const { user, userData } = useSelector((state: RootState) => state.auth);
+    console.log("headr",user)
 
     const handleOpenProfileOverlay = () => {
         setIsProfileOverlayOpen(true);
@@ -26,11 +49,32 @@ export const Header = () => {
         setIsNotificationOverlayOpen(false);
     };
 
+    const handleOpenLogoutModal = () => {
+        setIsLogoutModalVisible(true);
+    };
+
+    const handleCancelLogout = () => {
+        setIsLogoutModalVisible(false);
+    };
+
+    const handleConfirmLogout = () => {
+        setIsLogoutModalVisible(false);
+
+        notification.success({
+            message: "Logged Out",
+            description: "You have been successfully logged out.",
+            placement: "topRight",
+        });
+
+       localStorage.removeItem(LocalStorageKeys.authToken)
+        window.location.href = "/login"; // Replace with your login route
+    };
+
     return (
         <div className="header-container">
             {/* Profile Overlay */}
             <DynamicOverlay isOpen={isProfileOverlayOpen} closeOverlay={handleCloseProfileOverlay}>
-                <ProfileOverlay />
+                <ProfileOverlay profileData={userData} />
             </DynamicOverlay>
 
             {/* Notification Overlay */}
@@ -38,11 +82,23 @@ export const Header = () => {
                 <NotificationOverlay />
             </DynamicOverlay>
 
+            {/* Logout Confirmation Modal */}
+            <Modal
+                title="Confirm Logout"
+                visible={isLogoutModalVisible}
+                onOk={handleConfirmLogout}
+                onCancel={handleCancelLogout}
+                okText="Logout"
+                cancelText="Cancel"
+            >
+                <p>Are you sure you want to log out?</p>
+            </Modal>
+
             <div className="header-container-wrapper">
                 <div className="column-1">
                     <div className="name-details">
-                        <h2>Welcome, Steven!</h2>
-                        <p>Patient</p>
+                        <h2>Welcome, {`${userData?.first_name || ""} ${userData?.last_name || ""}!`}</h2>
+                        <p>{role}</p>
                     </div>
                     <div className="calendar-details">
                         <p>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
@@ -68,9 +124,15 @@ export const Header = () => {
                         <Notification />
                     </div>
                     <div className="profile-avatar-wrp" onClick={handleOpenProfileOverlay}>
-                        <img src={profileAvatar} alt="profile pic" />
+                        <img
+                            src={
+                                userData?.profile_picture_url ||
+                                "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?semt=ais_hybrid"
+                            }
+                            alt="profile pic"
+                        />
                     </div>
-                    <div className="logout-icon-wrp">
+                    <div className="logout-icon-wrp" onClick={handleOpenLogoutModal}>
                         <Logout />
                     </div>
                 </div>
