@@ -73,7 +73,7 @@ export const ProfileSetting = () => {
 
                   <div className="info-content">
                     <h3>Last Name</h3>
-                    <p>{userData.last_name}</p>
+                    <p>{userData.last_name}</p>  
                   </div>
                 </div>
                 <div className="info-wrapper">

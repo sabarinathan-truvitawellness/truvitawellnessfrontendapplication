@@ -12,7 +12,7 @@ export const AppRoutes = {
     settings:'/settings',
     appointments:'/appointments',
     familyMemeberSelector:'/familymemberselector',
-    doctorsDetails:'/doctorDetails',
+    doctorsDetails:'/doctorDetails/:doctorId',
     registerFamily: '/registerFamily',
     paymentHistory: '/paymentHistory',
     createTicket:'/createTicket',

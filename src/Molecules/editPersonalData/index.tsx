@@ -112,6 +112,7 @@ export const EditPersonalData = () => {
     zipcode: formData.zipCode,
     gender: formData.gender,
     date_of_birth: formData.dob ? formData.dob : "",
+    blood_group:formData.bloodGroup
   });
   // Validation functions
   const validateFirstName = (value: string) => {
@@ -347,7 +348,7 @@ export const EditPersonalData = () => {
       }
 
       navigate("/dashboard");
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       // Check if the error matches the expected type
       if (isSignUpError(error)) {

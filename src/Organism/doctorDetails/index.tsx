@@ -1,45 +1,30 @@
 import React from "react";
 import { CalendarComponent, DoctorCalender } from "../../Atom"; // Ensure the correct path is used
 import { AboutDoctor } from "../../Molecules";
-import './doctorDetails.scss'
-import dummyDoctorStanding from '../../Assets/images/header/doctor-standing-full.png'
-import { Link } from "react-router-dom";
+import "./doctorDetails.scss";
+import dummyDoctorStanding from "../../Assets/images/header/doctor-standing-full.png";
+import { Link, useParams } from "react-router-dom";
 import { AppRoutes } from "../../routes";
+import { useGetDocotorDetailsQuery } from "../../redux/services";
 
 export const DoctorDetails: React.FC = () => {
+  const { doctorId } = useParams();
 
-
-  const doctorData = {
-    imageUrl: dummyDoctorStanding,
-    doctorName: "Dr. John Smith",
-    doctorsQualification: "MBBS, MD - General Medicine",
-    totalRating: 4.8,
-    totalReviews: 125,
-    yearsOfExperience: 15,
-    hospitalName: "City Hospital",
-    location: "New York, NY",
-    DoctorsAboutContent:
-      "Dr. John Smith is a highly skilled physician with over 15 years of experience in general medicine. He is known for his compassionate care and thorough approach to patient health. Dr. Smith has received numerous accolades for his contributions to the medical field and is dedicated to providing the best possible treatment to his patients.",
-  };
+  const { data: doctorDetails } = useGetDocotorDetailsQuery(doctorId);
+  console.log("param", doctorDetails?.profile_picture_url);
 
   return (
     <div className="doctor-details-container">
       <div className="doctor-details-wrapper">
         <div className="about-dr-section">
-          <Link to={AppRoutes.doctorsDetails}>
-      <AboutDoctor
-      imageUrl={doctorData.imageUrl}
-      doctorName={doctorData.doctorName}
-      doctorsQualification={doctorData.doctorsQualification}
-      totalRating={doctorData.totalRating}
-      totalReviews={doctorData.totalReviews}
-      yearsOfExperience={doctorData.yearsOfExperience}
-      hospitalName={doctorData.hospitalName}
-      location={doctorData.location}
-      DoctorsAboutContent={doctorData.DoctorsAboutContent}
-    />
-    </Link>
-    </div>
+          <AboutDoctor
+            imageUrl={doctorDetails?.profile_picture_url}
+            doctorName={doctorDetails?.doctor_name}
+            yearsOfExperience={doctorDetails?.doctor_experience}
+            DoctorsAboutContent={doctorDetails?.bio}
+            availableDates={doctorDetails?.dates}
+          />
+        </div>
       </div>
     </div>
   );

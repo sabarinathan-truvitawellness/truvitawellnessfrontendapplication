@@ -4,10 +4,11 @@ import './login.scss';
 import { Button } from "../../Atom";
 import { Spin, notification } from "antd";
 import loginImageone from '../.../../../Assets/images/login/login-img-1.jpg';
-import loginImagetwo from '../.../../../Assets/images/login/login-img-2.png';
+import loginImagetwo from '../.../../../Assets/images/login/login-image-1.png';
 import { REGEX_CONSTANT } from "../../utils/common/constant";
 import { useLoginMutation } from "../../redux/services";
 import { Link, useNavigate } from "react-router-dom";
+import brandLogo from "../../Assets/images/home/truvita-logo.png";
 
 export const Login: React.FC = () => {
     const [login, { isLoading, isError }] = useLoginMutation();
@@ -71,6 +72,13 @@ export const Login: React.FC = () => {
 
     return (
         <Spin spinning={isLoading}>
+             <div className="login-Header-container">
+        <div className="login-header-container-wrapper">
+          <div className="brand-logo-img">
+            <img src={brandLogo} />
+          </div>
+        </div>
+      </div>
             <div className="container">
                 <div className="conatiner-wrappe max-w-[1000px] flex gap-20 ">
                     <div className="left-section">

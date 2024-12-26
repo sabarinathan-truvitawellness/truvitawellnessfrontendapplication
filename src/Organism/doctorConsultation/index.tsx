@@ -8,31 +8,26 @@ import {
 import doctorDummy from "../../Assets/images/header/doctor-standing-full.png";
 import { Button } from "../../Atom";
 import './doctorConsultation.scss'
+import { useGetDoctorListQuery } from "../../redux/services";
+import { config } from "process";
+import { LocalStorageKeys } from "../../utils/common/constant";
+import { Link } from "react-router-dom";
+import { AppRoutes } from "../../routes";
 
 export const DoctorConsultation = () => {
   const [formData, setFormData] = useState({
-    location: "",
+    // location: "",
     date: null,
     speciality:""
   });
 
-  const doctorData = {
-    doctorsName: "Dr. John Smith",
-    medicalSpecialization: "Cardiologist",
-    experience: 15,
-    hospitalName: "City Hospital",
-    location: "New York, NY",
-    totalRating: 4.8,
-    totalReviews: 120,
-    timeSlots: [
-      { time: "9:00 AM" },
-      { time: "11:00 AM" },
-      { time: "2:00 PM" },
-      { time: "4:00 PM" },
-    ],
-    imageUrl: doctorDummy,
-    doctorCosting: "19",
-  };
+  // const userId = localStorage.getItem(LocalStorageKeys.authToken);
+
+  const {data: getDocorsListData} = useGetDoctorListQuery({ specialty: formData.speciality, date: formData.date });
+
+  console.log("doctorListdata",getDocorsListData?.availability)
+
+
   function changeHandler(value: string, name: string): void {
     setFormData({
       ...formData,
@@ -62,13 +57,14 @@ export const DoctorConsultation = () => {
     { label: "Pathology", value: "pathology" },
     { label: "Family Medicine", value: "family_medicine" },
   ];
-  
+
+
   console.log("formData", formData);
   return (
     <div className="doctor-consulation-container">
       <div className="doctor-consultation-wrapper">
         <div className="filter-section">
-        <div className="global-input-wrapper">
+        {/* <div className="global-input-wrapper">
           <Input
             type="text"
             placeholder="Location"
@@ -80,7 +76,7 @@ export const DoctorConsultation = () => {
             variant="outlined"
             value={formData["location"] || ""}
           />
-        </div>
+        </div> */}
         <div className="global-input-wrapper">
           <DynamicDateField
             type="date"
@@ -106,12 +102,31 @@ export const DoctorConsultation = () => {
           />
         </div>
         <div>
-          <Button buttonText="Submit" externalClassName="filter-btn" />
+          <Button buttonText="Submit" externalClassName="filter-btn" /> 
+          {/* onClick={filterHandler}  */}
         </div>
         </div>
       
+{
+  getDocorsListData?.availability?.map((res:any, index:number) => {
+    return (
+      // <Link to={`${AppRoutes.doctorsDetails.replace(':doctorId', res?.doctor_id)}`}>
+  <DoctorInfoShortCard
+    key={res?.doctor_id}
+    doctorsName={res?.doctor_name}
+    medicalSpecialization={res?.specialty}
+    experience={res?.doctor_experience}
+    imageUrl={res?.profile_picture_url}
+    timeSlots={res?.slots}
+    doctorCosting={res?.doctor_fees}
+    doctorId = {res?.doctor_id}
+  />
+//  </Link>
 
-        <DoctorInfoShortCard {...doctorData} />
+    );
+  })
+}
+        
       </div>
     </div>
   );
