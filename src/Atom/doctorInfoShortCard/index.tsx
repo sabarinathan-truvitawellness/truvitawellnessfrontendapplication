@@ -17,7 +17,7 @@ interface DoctorInfoShortCardProps {
   timeSlots: TimeSlot[];
   imageUrl: string;
   doctorCosting: string;
-  doctorId: string
+  doctorId: string;
 }
 
 export const DoctorInfoShortCard: React.FC<DoctorInfoShortCardProps> = ({
@@ -27,11 +27,11 @@ export const DoctorInfoShortCard: React.FC<DoctorInfoShortCardProps> = ({
   timeSlots,
   imageUrl,
   doctorCosting,
-  doctorId
+  doctorId,
 }) => {
   const [viewAll, setViewAll] = useState(false);
 
-  console.log("img",imageUrl)
+  console.log("img", imageUrl);
 
   // Convert time to 12-hour format with AM/PM
   const convertTo12HourFormat = (time: string): string => {
@@ -57,53 +57,53 @@ export const DoctorInfoShortCard: React.FC<DoctorInfoShortCardProps> = ({
   // Limit the number of slots displayed initially
   const displayedSlots = viewAll ? futureSlots : futureSlots.slice(0, 3);
 
-  return (
-   
-    <div className="short-card-container">
-       <Link to={`${AppRoutes.doctorsDetails.replace(':doctorId', doctorId)}`}>
-      <div className="short-card-wrapper">
-        <div className="card-col-1">
-          <img src={`https://truvitacare.com${imageUrl}`} alt={`${doctorsName} profile`} />
-        </div>
-        <div className="card-col-2">
-          <div className="doctors-content">
-            <h2>{doctorsName}</h2>
-            <p>
-              {medicalSpecialization} <span>|</span>{" "}
-              {`${experience} yrs experience`}
-            </p>
+  const handleViewMoreClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation(); // Prevent Link's navigation
+    setViewAll(!viewAll);
+  };
 
-            <div className="doctors-time-slot">
-              {displayedSlots.length > 0 ? (
-                displayedSlots.map((slot, index) => (
-                  <div key={index} className="slots-list">
-                    {convertTo12HourFormat(slot.start_time)} -{" "}
-                    {convertTo12HourFormat(slot.end_time)}
-                  </div>
-                ))
-              ) : (
-                <p>No future slots available</p>
-              )}
-              {futureSlots.length > 3 && (
-                <button
-                className="view-more-btn"
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevent Link's click event
-                  setViewAll(!viewAll);
-                }}
-              >
-                {viewAll ? "View Less" : "View More"}
-              </button>
-              )}
-            </div>
+  return (
+    <Link to={`${AppRoutes.doctorsDetails.replace(":doctorId", doctorId)}`}>
+      <div className="short-card-container">
+        <div className="short-card-wrapper">
+          <div className="card-col-1">
+            <img
+              src={`https://truvitacare.com${imageUrl}`}
+              alt={`${doctorsName} profile`}
+            />
           </div>
-          <div className="doctor-costing">
-            <p> ${doctorCosting}</p>
+          <div className="card-col-2">
+            <div className="doctors-content">
+              <h2>{doctorsName}</h2>
+              <p>
+                {medicalSpecialization} <span>|</span>{" "}
+                {`${experience} yrs experience`}
+              </p>
+
+              <div className="doctors-time-slot">
+                {displayedSlots.length > 0 ? (
+                  displayedSlots.map((slot, index) => (
+                    <div key={index} className="slots-list">
+                      {convertTo12HourFormat(slot.start_time)} -{" "}
+                      {convertTo12HourFormat(slot.end_time)}
+                    </div>
+                  ))
+                ) : (
+                  <p>No future slots available</p>
+                )}
+                {futureSlots.length > 3 && (
+                  <button className="view-more-btn" onClick={handleViewMoreClick}>
+                    {viewAll ? "View Less" : "View More"}
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="doctor-costing">
+              <p> ${doctorCosting}</p>
+            </div>
           </div>
         </div>
       </div>
-      </Link>
-    </div>
-   
+    </Link>
   );
 };

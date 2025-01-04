@@ -1,0 +1,222 @@
+.app-filter-container {
+  .app-filter-wrapper {
+    .app-filter-row-1 {
+      margin-bottom: 10px;
+    }
+
+    .app-filter-row-2 {
+      display: flex;
+      justify-content: space-between;
+
+      .app-filter-col-1{
+        padding-right:20px ;
+      }
+      .app-filter-col-2 {
+padding-left:20px ;
+      }
+
+      .app-filter-col-1,
+      .app-filter-col-2 {
+        flex: 1;
+        // padding-right:20px;
+        // margin: 0 10px;
+        .section-title {
+          color: #232c2b;
+
+          font-family: Manrope;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          margin: 12px 0;
+        }
+
+        .pill-sho-wrapper,
+        .app-sho-wrapper {
+          background-color: #fff;
+          // border: 1px solid #ccc;
+          border-radius: 26px;
+          padding: 16px;
+          // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          .pill-reject-btn {
+            border-radius: 24px;
+            background: #fb6262;
+            padding: 8px 25px;
+          }
+          .pill-taken-btn {
+            border-radius: 24px;
+            background: #0fc0ed;
+            padding: 8px 25px;
+          }
+          .pill-reject-btn,
+          .pill-taken-btn {
+            svg {
+              width: 14px;
+              height: 14px;
+              color: white;
+            }
+          }
+
+          .pill-sho-row-1,
+          .app-sho-row-1 {
+            display: flex;
+            align-items: center;
+
+            .icon-wrapper {
+              padding: 12px;
+              background-color: #cff0f8;
+              border-radius: 50%;
+              margin-right: 16px;
+
+              svg {
+                width: 32px;
+                height: 32px;
+              }
+            }
+
+            .details-wrapper {
+              p {
+                margin: 4px 0;
+                font-size: 14px;
+                color: #333;
+                &:nth-child(2) {
+                  color: rgba(65, 80, 78, 0.5);
+                  font-weight: 600;
+                }
+                &:nth-child(3) {
+                  color: #a0a0a0;
+                  font-weight: 600;
+                }
+
+                &:first-child {
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+
+          .pill-sho-row-2,
+          .app-sho-row-2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+
+            .pill-shobtn-wrapper,
+            .app-shobtn-wrapper {
+              width: 100%;
+              display: flex;
+              // justify-content: space-between;
+              gap: 20px;
+              align-items: center;
+
+              .app-approve-status {
+                background-color: #4bcced;
+                padding: 8px 25px;
+                border-radius: 26px;
+                color: white;
+                font-size: 14px;
+              }
+
+              .status-wrapper {
+                margin-right: 16px;
+
+                p {
+                  font-size: 14px;
+                  color: #666;
+                }
+              }
+
+              .view-details-btn {
+                a {
+                  font-size: 16px;
+                  color: #55a4f9;
+                  text-decoration: none;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .change-slide-btn-wrapper {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+
+          button {
+            width: 60px;
+            height: 30px;
+            border: none;
+            background: rgba(19, 193, 237, 0.12);
+            color: #0fc0ed;
+            border-radius: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+        }
+      }
+
+      .app-filter-col-1 {
+        .pill-sho-wrapper {
+          .pill-sho-row-1 {
+            .details-wrapper {
+              p {
+                &:nth-child(2) {
+                  color: rgba(65, 80, 78, 0.5);
+
+                  font-family: Manrope;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                }
+
+                &:nth-child(3) {
+                  font-style: italic;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .app-filter-col-2 {
+        .app-sho-wrapper {
+          position: relative;
+          .slot-date-wrapper {
+            position: absolute;
+            border-radius: 24px;
+            background: rgba(15, 192, 237, 0.12);
+            color: #0fc0ed;
+            font-family: Manrope;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            padding: 2px 8px;
+            top: -10px
+          }
+          .app-sho-row-1 {
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

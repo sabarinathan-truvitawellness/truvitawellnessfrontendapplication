@@ -15,3 +15,4 @@ export * from './doctorInfoShortCard';
 export * from './doctorCalender';
 export * from './textBox';
 export * from './uploadFiles';
+export * from './modelOvrlay'

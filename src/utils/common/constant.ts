@@ -29,7 +29,7 @@ const REGEX_CONSTANT: { [key: string]: RegExp } = {
 
  let LocalStorageKeys = {
   authToken: "authToken",
-  refreshToken: "refreshToken", // Add this key
+  refreshToken: "refreshToken", 
   version: "version",
 };
 

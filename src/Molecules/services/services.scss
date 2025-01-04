@@ -1,5 +1,7 @@
-.services-container{
-   display: flex;
+.services-container {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
    gap: 20px;
-   padding: 20px;
-}
+   // padding: 0 20px; // Uncomment if padding is needed
+ }
+ 

@@ -11,6 +11,8 @@ import {
 } from "../../utils/common/svgIcons";
 import { Button } from "../button";
 import doctorDummyImage from '../../Assets/images/header/dummy-doctor-profile-2.png';
+import { Link } from "react-router-dom";
+import { AppRoutes } from "../../routes";
 
 interface InputProps {
   doctorName: string;
@@ -21,6 +23,8 @@ interface InputProps {
   onViewDetails: () => void;
   consultation: string;
   location:string;
+  patientImageUrl:string
+  appointment_id:string
 }
 
 export const AppointmentListCard: React.FC<InputProps> = ({
@@ -31,9 +35,12 @@ export const AppointmentListCard: React.FC<InputProps> = ({
   toTime,
   consultation,
   onViewDetails,
-  location
+  location,
+  patientImageUrl,
+  appointment_id
 }) => {
   return (
+    <Link to={AppRoutes.appointmentOverView.replace(':appointment_id', appointment_id)}>
     <div className="appointment-list-container">
       <div className="apointment-warpper">
         <div className="list-col-1">
@@ -47,7 +54,7 @@ export const AppointmentListCard: React.FC<InputProps> = ({
         </div>
         <div className="list-col-2">
           <div className="col-2-wrapper">
-            <img src={doctorDummyImage} alt="Doctor" />
+            <img src={`https://truvitacare.com${patientImageUrl}`} alt="Doctor" />
             <div className="col-2-content">
               <h2>{doctorName}</h2>
               <p className="cp-1">
@@ -78,9 +85,10 @@ export const AppointmentListCard: React.FC<InputProps> = ({
           </div>
         </div>
         <div className="list-col-6">
-          <Button buttonText="View Details" externalClassName="appointmen-view" onClick={onViewDetails} />
+          <Button buttonText="View Details" externalClassName="appointmen-view"  />
         </div>
       </div>
     </div>
+    </Link>
   );
 };

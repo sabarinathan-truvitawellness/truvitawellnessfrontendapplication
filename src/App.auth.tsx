@@ -45,7 +45,7 @@ export const AppAuth: React.FC<InputProps> = (props) => {
       const result = await refreshToken({});
   
       // Safely check if the error exists and is a FetchBaseQueryError
-      if (result?.error) {
+      if (result.error) {
         if ('status' in result.error && (result.error as FetchBaseQueryError).status === 401) {
           console.log("Token is invalid, logging out...");
           localStorage.removeItem(LocalStorageKeys.authToken);

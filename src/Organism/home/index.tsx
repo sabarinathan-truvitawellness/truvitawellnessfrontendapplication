@@ -1,14 +1,22 @@
 import React, { ReactNode } from "react";
-import { Services } from "../../Molecules";
+import { AppointmentShortCardFilter, HealthMatrixSection, Services, WellnessCardsSection } from "../../Molecules";
 import { CalendarComponent } from "../../Atom";
+import './pageRender.scss'
 
 
 export const Home = (() => {
     return (
-        <div className="page-render-container">
-            <div className="container-wrapper">
+        <div className="home-page-render-container">
+            <div className="home-container-wrapper">
+                <div className="home-pr-col-1">
                <Services/>
-               <CalendarComponent/>
+               <AppointmentShortCardFilter/>
+               <WellnessCardsSection/>
+               </div>
+               <div className="home-pr-col-2">
+               <HealthMatrixSection/>
+               </div>
+
             </div>
         </div>
     )

@@ -1,0 +1,123 @@
+.health-matrix-container {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 26px;
+
+  .health-matrix-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    .hm-col-1 {
+      .card-list-container {
+        .hm-card-container {
+          .hm-card-wrapper {
+            border-radius: 24px;
+            background: rgba(15, 192, 237, 0.04);
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+
+            .card-row-1 {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 30px;
+
+              .row-1 {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                span {
+                  color: #0fc0ed;
+                }
+              }
+
+              .unit-status {
+                span {
+                  color: #0fc0ed;
+
+                  font-family: Manrope;
+                  font-size: 20px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                }
+              }
+
+              svg {
+                width: 24px;
+                height: 24px;
+                fill: #4c4c4c;
+              }
+
+              span {
+                font-weight: bold;
+                font-size: 16px;
+                color: #333;
+              }
+            }
+
+            .card-row-2 {
+              text-align: center;
+              font-size: 14px;
+              color: #888;
+            }
+          }
+
+          .hm-spl-card-wrapper {
+            border-radius: 24px;
+            background: rgba(15, 192, 237, 0.16);
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            // display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .spl-card-row-1 {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            .spl-card-row-2 {
+              margin-top: 20px;
+              // text-align: center;
+
+              a {
+                color: #017a99;
+                text-decoration: none;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hm-col-2 {
+      // width: 35%;
+      h2 {
+        color: #0fc0ed;
+        font-family: Manrope;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .body-img-wrapper {
+        img {
+          width: 100%;
+          border-radius: 10px;
+          // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}

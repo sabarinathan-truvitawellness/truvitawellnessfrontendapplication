@@ -1,0 +1,112 @@
+.calendar-container {
+    margin: 0 auto;
+    border-radius: 8px;
+  
+    text-align: center;
+    .calender-wrapper{
+      padding: 10px 20px;
+      background-color: #fff;
+        border-radius: 26px;
+    }
+    .title-section{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .h6 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .selected-week {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  
+   
+  
+    .days-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+  
+      button {
+        // margin: 0 8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+  
+        svg {
+          color: #000;
+        }
+  
+        &:hover {
+          svg {
+            color: #63cbfc;
+          }
+        }
+      }
+  
+      .days-wrapper {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: nowrap;
+  
+        .day {
+          // width: 50px;
+          text-align: center;
+          padding: 8px 26px;
+          border-radius: 22px;
+          cursor: pointer;
+          background-color: #eeeded;
+          color: black;
+  
+          &.selected {
+            background-color: rgba(15, 192, 237, 0.75);       
+            color: #fff;
+          }
+  
+          span {
+            display: block;
+  
+            &:first-child {
+              font-size: 14px;
+            }
+  
+            &:last-child {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  
+    .calendar-picker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .calendar-icon {
+        cursor: pointer;
+        margin-right: 8px;
+  
+        svg {
+          color: #000;
+  
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+  
+     
+    }
+  
+    .overlay {
+      .MuiPickersStaticWrapper-root {
+        width: 100%;
+      }
+    }
+  }
+  

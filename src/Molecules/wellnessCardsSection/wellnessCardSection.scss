@@ -1,0 +1,101 @@
+.wellness-card-section-container {
+  // padding: 20px 20px 0 0 ;
+  display: flex;
+  justify-content: center;
+
+  .wellness-card-section-wapper {
+    background-color: white;
+    padding: 16px;
+    border-radius: 26px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 equal-width columns */
+    gap: 20px;
+    width: 100%;
+
+    .wcard-container {
+      border-radius: 24px;
+      background: rgba(15, 192, 237, 0.12);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 10px;
+
+      .wcard-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .icon-section {
+          width: 40px;
+          height: 40px;
+          // background-color: #e0e0e0;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        .activity-timing {
+          text-align: center;
+
+          p {
+            margin: 5px 0;
+
+            &:nth-child(1) {
+              color: #017a99;
+              font-family: Manrope;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+            }
+
+            &:last-child {
+              color: #017a99;
+              text-align: center;
+              font-family: Manrope;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+            }
+          }
+        }
+      }
+    }
+    .spl-wcard-container {
+      border-radius: 24px;
+      background: rgba(15, 192, 237, 0.4);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #017a99;
+      text-align: center;
+      font-family: Manrope;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      .spl-wcard-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        h2 {
+          display: flex;
+          flex-direction: column;
+          // justify-content: center;
+          align-items: center;
+          // text-align: center;
+          svg {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

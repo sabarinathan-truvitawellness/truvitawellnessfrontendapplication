@@ -16,7 +16,9 @@ import {
   TicketChat,
   AiBooth,
   PreacriptionOverView,
-  WellnessProgram
+  WellnessProgram,
+  AppointmentOverview,
+  BookingOverView
 } from "../Organism";
 import { Inbox } from "../Organism/inbox";
 
@@ -88,5 +90,13 @@ export const PrivatePages = [
   {
     path: AppRoutes.wellnessPrograme,
     element: <WellnessProgram/> 
+  },
+  {
+    path: AppRoutes.appointmentOverView,
+    element: <AppointmentOverview/>
+  },
+  {
+    path: AppRoutes.bookingOverview,
+    element: <BookingOverView/>
   }
 ];

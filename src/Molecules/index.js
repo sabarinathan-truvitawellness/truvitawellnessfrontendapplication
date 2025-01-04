@@ -9,3 +9,6 @@ export * from './pricing';
 export * from './appointmentServices';
 export * from './aboutDoctor';
 export * from './editPersonalData';
+export * from './healthMatrixSection';
+export * from './appointmentFilter';
+export * from './wellnessCardsSection'

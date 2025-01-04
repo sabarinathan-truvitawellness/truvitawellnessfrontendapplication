@@ -11,7 +11,7 @@
     export * from './doctorDetails';
     export * from './registerFamily';
     export * from './paymentHistory';
-    export * from './createTicket'
+    export * from './createTicket';
     export * from './ticketChat';
     export * from './prescription';
     export * from './pillRemainder';
@@ -19,3 +19,5 @@
     export * from './aiBooth';
     export * from './prescriptionOverView';
     export * from './wellnessPrograme';
+    export * from './appointmentOverview';
+    export * from './bookingOverview';

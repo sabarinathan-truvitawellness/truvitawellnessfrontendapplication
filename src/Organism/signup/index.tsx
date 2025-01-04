@@ -16,6 +16,7 @@ import { notification, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 import { otpSentSuccess } from "../../redux/slices/otp";
 import { useDispatch } from "react-redux";
+import brandLogo from "../../Assets/images/home/truvita-logo.png";
 
 interface SignUpError {
   data?: {
@@ -455,7 +456,18 @@ export const Signup = () => {
   }
 
   return (
-    <div className="container">
+    <>
+    
+    <div className="login-Header-container">
+        <div className="login-header-container-wrapper">
+          <div className="brand-logo-img">
+            <img src={brandLogo} />
+          </div>
+        </div>
+      </div>
+      
+      
+      <div className="container">
       {isLoading && (
         <div className="full-page-spinner">
           <Spin size="large" />
@@ -710,6 +722,8 @@ export const Signup = () => {
         </div>
       </div>
     </div>
+      </>
+   
   );
 };
 

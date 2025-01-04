@@ -1,0 +1,265 @@
+.bookig-verview-conatiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // padding: 0 20px 0 20px;
+
+  .booking-overview-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    //   max-width: 1200px;
+    //   background-color: #f9f9f9;
+    border-radius: 26px;
+    //   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+
+    .bv-col-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 26px;
+      height: 75vh;
+      flex: 1;
+    }
+    .bv-col-2 {
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bv-col-1 {
+      .bv-row-1 {
+        margin-bottom: 20px;
+
+        .title-section {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 15px;
+        }
+
+        .doctor-info-wrapper {
+          display: flex;
+          gap: 15px;
+          margin-bottom: 20px;
+
+          .image-wrapper {
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+          .content-wrapper {
+            p {
+              margin: 0;
+
+              &:nth-child(1) {
+                font-weight: bold;
+              }
+
+              &:nth-child(2) {
+                color: #777;
+                font-size: 14px;
+              }
+
+              &:nth-child(3) {
+                display: flex;
+                align-items: center;
+
+                svg {
+                  margin-right: 5px;
+                  fill: #f0c419;
+                }
+
+                span {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+
+        .appointment-data-wrapper {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          margin-bottom: 20px;
+          border-radius: 24px;
+          background: rgba(15, 192, 237, 0.08);
+          padding: 12px;
+
+          .date-section {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 16px;
+            background: rgba(15, 192, 237, 0.5);
+            padding: 12px;
+          }
+
+          .app-timing-info {
+            p {
+              margin: 0;
+
+              &:nth-child(2) {
+                color: #777;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        .edit-app-btn-wrapper {
+          width: 100%;
+          text-align: center;
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            background: #fff;
+            color: #0fc0ed;
+            padding: 14px 12px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+
+      .bv-row-2 {
+        .sub-section-title {
+          color: #232c2b;
+          font-family: Manrope;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        .edit-member-wrapper {
+          .memeber-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 192, 237, 0.12);
+            padding: 10px;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            .col-1 {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+              }
+
+              p {
+                margin: 0;
+              }
+            }
+
+            .col-2 {
+              .icon-wrapper {
+                background-color: white;
+                padding: 8px;
+                border-radius: 50%;
+                svg {
+                  color: #017a99;
+                  width: 20px;
+                  height: 20px;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .bv-col-2 {
+      .bv-row-1 {
+        .paymnet-info {
+          background-color: #fff;
+          padding: 15px;
+          border-radius: 25px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+
+          .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+              font-size: 14px;
+            }
+          }
+
+          .grand-total-section {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+          }
+        }
+
+        .form-wrapper {
+          .booking-conformation-form {
+            .global-input-wrapper {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+
+      .bv-row-2 {
+        display: flex;
+        justify-content: flex-end;
+        .boot-btn-wrapper {
+          width: 100%;
+          padding: 20px;
+        }
+        .book-appointment {
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 25px;
+          cursor: pointer;
+          width: 100%;
+          border-radius: 96px;
+          background: #0fc0ed;
+        }
+      }
+    }
+  }
+}

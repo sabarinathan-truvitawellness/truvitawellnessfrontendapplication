@@ -1,0 +1,482 @@
+.appointment-overview-container {
+  padding: 20px;
+  background: #f9fafc;
+
+  .verical-line {
+    border-right: 1px solid rgb(223, 222, 222);
+  }
+
+  .appointment-overview-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .app-overiew-row-1-container {
+      display: flex;
+      justify-content: space-between;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+
+      .app-row-1-wrapper {
+        display: flex;
+        width: 100%;
+
+        .app-row-1-col-1 {
+          flex: 1;
+          .patient-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .image-wrapper {
+              display: flex;
+              justify-content: center;
+              img {
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+              }
+            }
+
+            .info-content {
+              text-align: center;
+              :nth-child(1) {
+                color: #232c2b;
+                text-align: center;
+                font-family: Manrope;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+              }
+              :nth-child(2) {
+                color: #017a99;
+                text-align: center;
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+              }
+              :nth-child(3) {
+                display: flex;
+                justify-content: center;
+                color: rgba(35, 44, 43, 0.5);
+                text-align: center;
+                font-family: Manrope;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+              }
+              p {
+                margin: 0;
+                font-size: 14px;
+                color: #555;
+              }
+
+              span {
+                margin-right: 2px;
+              }
+            }
+
+            .tier-type {
+              width: 50%;
+              margin: 0 auto;
+              padding: 5px 10px;
+              text-align: center;
+              color: #017a99;
+              font-family: Manrope;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+              border-radius: 24px;
+              background: rgba(15, 192, 237, 0.12);
+            }
+
+            .icon-container {
+              display: flex;
+              justify-content: center;
+              margin-top: 25px;
+              gap: 10px;
+
+              .icon-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                cursor: pointer;
+                padding: 12px;
+                border: 1px solid rgb(219, 217, 217);
+
+                svg {
+                  width: 24px;
+                  height: 24px;
+                  color: #0077b6;
+                }
+              }
+            }
+          }
+        }
+
+        .app-row-1-col-2 {
+          padding: 20px;
+          flex: 2;
+          .row-header-section {
+            margin-bottom: 20px;
+            .row-header-wrapper {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .appointment-timing {
+                border-radius: 16px;
+                background: rgba(21, 197, 241, 0.1);
+                padding: 20px;
+                .t-row-1 {
+                  display: flex;
+                }
+              }
+              .appointment-consultation-type {
+                :nth-child(1) {
+                  display: flex;
+                  align-items: center;
+                  color: #0fc0ed;
+                  font-family: Manrope;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                  margin-bottom: 5px;
+                }
+                :nth-child(2) {
+                  display: flex;
+                  color: #0fc0ed;
+                  font-family: Manrope;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                  span {
+                    color: #232c2b;
+                    font-family: Manrope;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                  }
+                }
+              }
+              .appointment-date {
+                p {
+                  margin: 0;
+                  color: #232c2b;
+                  font-family: Manrope;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+                  padding-right: 20px;
+
+                  span {
+                  }
+                }
+              }
+            }
+          }
+
+          .appointment-billing-card-container {
+            background: #f9fafc;
+            border: 1px solid #e5e5e5;
+            border-radius: 24px;
+            padding: 20px;
+
+            .billing-card-wrapper {
+              .billing-card-title {
+                color: #232c2b;
+                font-family: Manrope;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin-bottom: 20px;
+              }
+            }
+
+            .consultation-fee-wrapper {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            }
+
+            .consultation-fees,
+            .tax-chargees,
+            .total-amount {
+              display: flex;
+              justify-content: space-between;
+              color: rgba(35, 44, 43, 0.5);
+              font-family: Manrope;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+
+              p:last-child {
+                font-weight: bold;
+              }
+            }
+            .total-amount {
+              color: #232c2b;
+              font-family: Manrope;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+              span {
+                color: #0fc0ed;
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+              }
+
+              p:last-child {
+                color: #232c2b;
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+              }
+            }
+          }
+        }
+
+        .app-row-1-col-3 {
+            padding: 20px;
+          flex: 1;
+          .col-3-wrapper{
+            display: flex;
+            gap: 10px;
+        
+            .view-card {
+                background: #e0f7ff;
+                color: #0077b6;
+                padding: 26px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                text-align: center;
+                cursor: pointer;
+    
+                svg {
+                  display: block;
+                  margin: 0 auto 5px;
+                  width: 24px;
+                  height: 24px;
+                }
+              }
+
+            
+          }
+
+           
+    
+              .notes-setion {
+                p{
+                    color: #232C2B;
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+                }
+                textarea {
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #e5e5e5;
+                  border-radius: 4px;
+                  resize: none;
+                }
+                .add-notes{
+                    border-radius: 24px;
+                    background: #0FC0ED;
+                    color: white;
+                    padding: 12px;
+                  }
+              }
+          
+        
+        }
+      }
+    }
+
+    
+        .app-row-2-wrapper {
+            
+            p {
+              font-weight: bold;
+              color: #333;
+              margin-bottom: 10px;
+            }
+      
+            .apointment-overview-card-warpper {
+              display: flex;
+              justify-content: space-between;
+              background: #ffffff;
+              border-radius: 24px;
+              padding: 10px;
+              align-items: center;
+              margin-bottom: 10px;
+
+              .list-col-1,
+              .list-col-2,
+              .list-col-3,
+              .list-col-4,
+              .list-col-5,
+              .list-col-6 {
+                display: flex;
+                align-items: center;
+              }
+      
+              .list-col-1 {
+                color: #0fc0ed;
+                font-family: Manrope;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                border-radius: 16px;
+                background: rgba(15, 192, 237, 0.08);
+                padding: 12px;
+                display: flex;
+                justify-content: center;
+                p {
+                  margin-top: 10px;
+                }
+                .col-1-icon-wrapper{
+                  display: flex;
+                  justify-content: center;
+                }
+              }
+          
+              .list-col-2 {
+                display: flex;
+          
+                .col-2-wrapper {
+                  display: flex;
+                  align-items: center;
+          
+                  img {
+                    border-radius: 50%;
+                    width: 80px;
+                    height: 80px;
+                    margin-right: 20px;
+                  }
+          
+          
+                  .cp-1 {
+                    color: rgba(35, 44, 43, 0.5);
+                    font-family: Manrope;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    margin: 8px 0;
+                  }
+          
+                  .cp-2 {
+                    display: flex;
+                    color: rgba(35, 44, 43, 0.5);
+                    font-family: Manrope;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                  }
+          
+                  h2 {
+                    color: #232c2b;
+                    font-family: Manrope;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                  }
+                }
+              }
+          
+              .list-col-3 {
+                  p{
+                      color: #0FC0ED;
+          font-family: Manrope;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          margin-left: 8px;
+                  }
+              }
+          
+              .list-col-4 {
+                display: block;
+                text-align: center;
+                .ap-1 {
+                  color: #232c2b;
+                  font-family: Manrope;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                }
+                .ap-2 {
+                  color: rgba(35, 44, 43, 0.50);
+                  font-family: Manrope;
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+                  text-align: center;
+                }
+              }
+          
+              .list-col-5 {
+                display: flex;
+          
+                .icon-wrapper {
+                  padding: 12px;
+                  border: 1px solid rgb(165, 165, 165);
+                  border-radius: 50%;
+                  margin: 0 5px;
+                  cursor: pointer;
+          
+                  svg {
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+              }
+          
+              .list-col-6 {
+                  
+                .appointment-view {
+                  background-color: #0FC0ED;
+                  padding: 15px;
+                  color: #F5F8F8;
+                  font-family: Manrope;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                  border-radius: 25px;
+                }
+              }
+            }
+
+          
+          }
+    
+    
+  }
+}

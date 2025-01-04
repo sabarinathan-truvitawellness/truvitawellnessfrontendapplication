@@ -23,5 +23,7 @@ export const AppRoutes = {
     aiDocotor: '/aiDocotor',
     aiBooth:'/aiBooth',
     prescriptionOverView: '/prescriptionOverView',
-    wellnessPrograme: '/wellnessPrograme'
+    wellnessPrograme: '/wellnessPrograme',
+    appointmentOverView: '/appointmentOverView/:appointment_id',
+    bookingOverview: '/bookingOverview'
 };

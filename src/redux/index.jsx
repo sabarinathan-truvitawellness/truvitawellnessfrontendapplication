@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import { AuthAPI,DoctorListApi,OtpVerify, Profile } from "./services";
+import { AppointmentBookingApi, AuthAPI,DoctorListApi,OtpVerify, Profile } from "./services";
 import React from "react";
-import {authReducer,otpSlice} from './slices';
+import {authReducer,otpSlice,bookingSlice} from './slices';
 import { Doctor } from "../utils/common/svgIcons";
 
 
@@ -12,15 +12,18 @@ const ReduxStore = configureStore({
         [OtpVerify.reducerPath]: OtpVerify.reducer,
         [Profile.reducerPath]: Profile.reducer,
         [DoctorListApi.reducerPath]:DoctorListApi.reducer,
+        [AppointmentBookingApi.reducerPath]:AppointmentBookingApi.reducer,
         auth: authReducer,
-        otp: otpSlice
+        otp: otpSlice,
+        booking: bookingSlice 
     },
     middleware:(getDefaultMiddleware) => 
         getDefaultMiddleware().concat(
             AuthAPI.middleware,
             OtpVerify.middleware,
             Profile.middleware,
-            DoctorListApi.middleware
+            DoctorListApi.middleware,
+            AppointmentBookingApi.middleware
         )
 });
 
@@ -33,3 +36,4 @@ export const AppRedux = ({children}) => {
         {children}
     </Provider>
 }
+

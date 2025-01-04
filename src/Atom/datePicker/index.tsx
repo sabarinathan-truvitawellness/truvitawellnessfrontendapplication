@@ -1,119 +1,123 @@
-import React, { useState, useEffect } from "react";
-import { format, addDays, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, subMonths, isSameMonth } from "date-fns";
-import { FaCalendarAlt } from 'react-icons/fa';
+import React, { useState } from "react";
+import { format, addDays } from "date-fns";
+import { IconButton, Typography } from "@mui/material";
+import { ChevronLeft, ChevronRight, CalendarToday } from "@mui/icons-material";
+import { ModelOverlay } from "../modelOvrlay"; // Assuming ModelOverlay is your custom modal component
+import { LocalizationProvider, StaticDatePicker } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs, { Dayjs } from "dayjs";
+import "./datePicker.scss";
 
 interface CalendarComponentProps {
-    defaultDate?: Date;
+  onDateSelect?: (selectedDate: Dayjs) => void; // New prop to handle selected date
 }
 
-export const CalendarComponent: React.FC<CalendarComponentProps> = ({ defaultDate = new Date() }) => {
-    const [selectedDate, setSelectedDate] = useState<Date | null>(defaultDate);
-    const [currentStartDate, setCurrentStartDate] = useState<Date>(startOfMonth(defaultDate));
-    const [currentMonth, setCurrentMonth] = useState<Date>(startOfMonth(defaultDate));
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+export const CalendarComponent: React.FC<CalendarComponentProps> = ({
+  onDateSelect,
+}) => {
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [isOpenOverlay, setIsOpenOverlay] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
 
-    useEffect(() => {
-        if (!isSameMonth(currentStartDate, currentMonth)) {
-            setCurrentStartDate(startOfMonth(currentMonth));
-        }
-    }, [currentMonth]);
+  const getDaysToDisplay = () => {
+    return Array.from({ length: 7 }, (_, i) => addDays(startDate, i));
+  };
 
-    const getDaysToDisplay = () => {
-        const endDate = endOfMonth(currentMonth);
-        return eachDayOfInterval({
-            start: currentStartDate,
-            end: new Date(Math.min(addDays(currentStartDate, 6).getTime(), endDate.getTime())),
-        });
-    };
-
-    const handleDateScroll = (direction: 'prev' | 'next') => {
-        const newStartDate = direction === 'next' 
-            ? addDays(currentStartDate, 7) 
-            : addDays(currentStartDate, -7);
-        // Ensure newStartDate remains within the current month
-        if (isSameMonth(newStartDate, currentMonth)) {
-            setCurrentStartDate(newStartDate);
-        }
-    };
-
-    const handleMonthScroll = (direction: 'prev' | 'next') => {
-        const newMonth = direction === 'next' ? addMonths(currentMonth, 1) : subMonths(currentMonth, 1);
-        setCurrentMonth(newMonth);
-    };
-
-    const handleDateChange = (date: Date | null) => {
-        if (date) {
-            setSelectedDate(date);
-            setCurrentMonth(startOfMonth(date)); // Update the current month
-            setIsOpen(false);
-        }
-    };
-
-    const handleMonthSelect = (month: Date) => {
-        setCurrentMonth(month); // Set the selected month
-        setCurrentStartDate(startOfMonth(month)); // Update start date to the first of the selected month
-    };
-
-    const isSelectedDate = (day: Date) => selectedDate && day.toDateString() === selectedDate.toDateString();
-
-    return (
-        <div className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md relative">
-            <h3 className="text-lg font-semibold text-center">Your Schedule</h3>
-
-            {/* Month Navigation */}
-            <div className="flex items-center justify-between mt-4">
-                <button onClick={() => handleMonthScroll('prev')} className="p-2 rounded-lg bg-gray-300 hover:bg-gray-400">
-                    &lt;
-                </button>
-                <div className="flex justify-between flex-1 mx-2">
-                    {Array.from({ length: 3 }, (_, i) => {
-                        const month = addMonths(currentMonth, i);
-                        return (
-                            <div 
-                                key={i} 
-                                className={`text-center p-2 rounded-lg cursor-pointer ${
-                                    isSameMonth(month, currentMonth) ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
-                                }`}
-                                onClick={() => handleMonthSelect(month)} // Month selection handler
-                            >
-                                <p className="font-medium">{format(month, "MMMM yyyy")}</p>
-                            </div>
-                        );
-                    })}
-                </div>
-                <button onClick={() => handleMonthScroll('next')} className="p-2 rounded-lg bg-gray-300 hover:bg-gray-400">
-                    &gt;
-                </button>
-            </div>
-
-            {/* Days of the current month with navigation */}
-            <div className="flex items-center justify-between mt-4">
-                <button onClick={() => handleDateScroll('prev')} className="p-2 rounded-lg bg-gray-300 hover:bg-gray-400">
-                    &lt;
-                </button>
-                <div className="flex justify-between flex-1 mx-2 space-x-2">
-                    {getDaysToDisplay().map((day, index) => (
-                        <div
-                            key={index}
-                            className={`w-12 text-center p-2 rounded-lg cursor-pointer ${isSelectedDate(day) ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"}`}
-                            onClick={() => handleDateChange(day)}
-                        >
-                            <p className="text-sm font-medium">{format(day, "dd")}</p>
-                            <p className="text-xs">{format(day, "EEE")}</p>
-                        </div>
-                    ))}
-                </div>
-                <button onClick={() => handleDateScroll('next')} className="p-2 rounded-lg bg-gray-300 hover:bg-gray-400">
-                    &gt;
-                </button>
-            </div>
-
-            {/* Selected Date and Calendar Icon */}
-            <div className="mt-4 flex items-center justify-center space-x-2">
-                <span className="font-medium">Selected Date: {selectedDate ? format(selectedDate, "dd-MM-yyyy") : "None"}</span>
-               
-            </div>
-
-        </div>
+  const handleDateScroll = (direction: "prev" | "next") => {
+    setStartDate((prevDate) =>
+      direction === "next" ? addDays(prevDate, 7) : addDays(prevDate, -7)
     );
+  };
+
+  const closeOverlay = () => {
+    setIsOpenOverlay(false);
+  };
+
+  const renderCalendar = () => {
+    setIsOpenOverlay(true);
+  };
+
+  const handleDaySelect = (day: Date) => {
+    const newSelectedDate = dayjs(day);
+    setSelectedDate(newSelectedDate); // Update local state
+    if (onDateSelect) {
+      onDateSelect(newSelectedDate); // Notify parent component
+    }
+  };
+
+  return (
+    <>
+      {/* Calendar Overlay */}
+      {isOpenOverlay && (
+        <ModelOverlay closeOverlay={closeOverlay}>
+          <div className="overlay">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <StaticDatePicker
+                displayStaticWrapperAs="desktop"
+                value={selectedDate}
+                onChange={(newDate) => {
+                  if (newDate) {
+                    setSelectedDate(newDate);
+                    setStartDate(newDate.toDate());
+                    if (onDateSelect) {
+                      onDateSelect(newDate);
+                    }
+                    closeOverlay();
+                  }
+                }}
+                disablePast
+              />
+            </LocalizationProvider>
+          </div>
+        </ModelOverlay>
+      )}
+
+      {/* Calendar UI */}
+      <div className="calendar-container">
+        <div className="calender-wrapper">
+        <div className="title-section">
+          <div className="h6">Your Schedule</div>
+          <div className="calendar-picker">
+            <div className="calendar-icon" onClick={renderCalendar}>
+              <CalendarToday />
+            </div>
+            <div className="selected-week">
+              Selected Date:{" "}
+              {format(selectedDate.toDate(), "dd-MM-yyyy")}
+            </div>
+          </div>
+        </div>
+        {/* Days Navigation */}
+        <div className="days-navigation">
+          <IconButton onClick={() => handleDateScroll("prev")}>
+            <ChevronLeft />
+          </IconButton>
+
+          <div className="days-wrapper">
+            {getDaysToDisplay().map((day, index) => (
+              <div
+                key={index}
+                className={`day ${
+                  dayjs(day).format("YYYY-MM-DD") ===
+                  selectedDate.format("YYYY-MM-DD")
+                    ? "selected"
+                    : ""
+                }`}
+                onClick={() => handleDaySelect(day)}
+              >
+                <span>{format(day, "dd")}</span>
+                <span>{format(day, "EEE")}</span>
+              </div>
+            ))}
+          </div>
+
+          <IconButton onClick={() => handleDateScroll("next")}>
+            <ChevronRight />
+          </IconButton>
+        </div>
+        </div>
+
+      </div>
+    </>
+  );
 };

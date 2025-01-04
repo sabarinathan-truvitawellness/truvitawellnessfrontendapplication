@@ -3,9 +3,9 @@ import { Input } from "../../Atom";
 import './login.scss';
 import { Button } from "../../Atom";
 import { Spin, notification } from "antd";
-import loginImageone from '../.../../../Assets/images/login/login-img-1.jpg';
+import loginImageone from '../.../../../Assets/images/login/docotr-login-img-1.png';
 import loginImagetwo from '../.../../../Assets/images/login/login-image-1.png';
-import { REGEX_CONSTANT } from "../../utils/common/constant";
+// import { REGEX_CONSTANT } from "../../utils/common/constant";
 import { useLoginMutation } from "../../redux/services";
 import { Link, useNavigate } from "react-router-dom";
 import brandLogo from "../../Assets/images/home/truvita-logo.png";
@@ -87,7 +87,7 @@ export const Login: React.FC = () => {
                                 <div className="img-1">
                                     <img src={loginImageone} alt="" className="w-[100%]" />
                                 </div>
-                                <div className="img-2 relative top-[80px]">
+                                <div className="img-2">
                                     <img src={loginImagetwo} alt="" className="w-[100%]" />
                                 </div>
                             </div>
